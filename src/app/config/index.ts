@@ -1,0 +1,1 @@
+export const BASE_URL = "https://localhost.cloudsoft.app/api/v1"

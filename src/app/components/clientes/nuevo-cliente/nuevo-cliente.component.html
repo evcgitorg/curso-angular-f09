@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label>Tipo Documento</label>
+            <select [(ngModel)]="tipoDocumento" class="form-control">
+                <option>Seleccionar</option>
+                <option value="CC">CC</option>
+                <option value="CE">CE</option>                
+            </select>
+        </div>
+        <div class="col">
+            <label>No Documento</label>
+            <input type="text" [(ngModel)]="noDocumento" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Nombres</label>
+            <input type="text" [(ngModel)]="nombres" class="form-control" />
+        </div>
+        <div class="col">
+            <label>Apellidos</label>
+            <input type="text" [(ngModel)]="apellidos" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Correo</label>
+            <input type="text" [(ngModel)]="correo" class="form-control" />
+        </div>
+        <div class="col">
+            <label>Telefono</label>
+            <input type="text" [(ngModel)]="telefono" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Direccion</label>
+            <textarea [(ngModel)]="direccion" class="form-control" ></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="button" (click)="submit()" class="btn btn-success mt-3 mb-3" >Enviar</button>
+        </div>
+    </div>
+</div>

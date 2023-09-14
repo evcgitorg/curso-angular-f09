@@ -1,0 +1,48 @@
+<p>ciclo-vida works!</p>
+
+<!-- Directivas -->
+
+<!-- if -->
+<div *ngIf="MiBoolean">
+    <!-- en caso de ser true -->
+</div>
+
+<!-- if / else -->
+<div *ngIf="MiBoolean; else alternativaElse">
+    <!-- en caso de ser true -->
+</div>
+<ng-template #alternativaElse >
+    <!-- en caso de ser false -->
+</ng-template>
+
+<!-- for -->
+<ul>
+    <li *ngFor="let item of MiArray">{{item}}</li>
+</ul>
+
+<!-- switch -->
+<!-- <div [ngSwitch]="MiString">
+    <div *ngSwitchCase = "Daniel">Contenido para Daniel</div>
+    <div *ngSwitchCase = "Pedro">Contenido para Pedro</div>
+    <div *ngSwitchCase = "Pablo">Contenido para Pablo</div>
+    <div *ngSwitchDefault>Contenido por defecto</div>
+</div> -->
+
+<!-- model -->
+<!-- Se usa para habilitar la vinculación o lectura de datos de forma bidireccional, del componente a la vista y de la vista al componente -->
+<input type="text" [(ngModel)="MiInputValue"] />
+{{MiInputValue}}
+<!-- disabled -->
+<input type="text" [(ngDisabled)="MiBoolean"] />
+
+<!-- Para condicionar la visualización del contenido, se usan 2 directivas, ng-container, ng-template -->
+
+<ng-container *ngIf="MiBoolean; else template">
+
+</ng-container>
+
+<ng-template #template>
+
+</ng-template>
+
+
