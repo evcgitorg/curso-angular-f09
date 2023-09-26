@@ -21,6 +21,12 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/pedidos">Pedidos</a>
           </li>
+          <li class="nav-item">
+            Probando
+            <div *ngIf="(store$ | async) as item">
+              Bienvenido {{item.userData.email}}
+            </div>
+          </li>
         </ul>
       </div>
     </div>

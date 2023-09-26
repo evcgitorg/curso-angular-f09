@@ -8,8 +8,13 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { CicloVidaComponent } from './components/ciclo-vida/ciclo-vida.component';
 import { NuevoClienteComponent } from './components/clientes/nuevo-cliente/nuevo-cliente.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: '',
     component: MainLayoutComponent,

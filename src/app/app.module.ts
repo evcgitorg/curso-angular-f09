@@ -19,6 +19,10 @@ import { PedidosService } from './services/pedidos.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NuevoClienteComponent } from './components/clientes/nuevo-cliente/nuevo-cliente.component';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AuthReducer } from './ngrx/reducers/auth.reducers';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +36,19 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     CicloVidaComponent,
-    NuevoClienteComponent
+    NuevoClienteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot(
+      {userStore: AuthReducer},
+      {runtimeChecks: {strictActionImmutability: true, strictStateImmutability: true}}
+    ),
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [ClientesService, CategoriasService, ProductosService, PedidosService],
   bootstrap: [AppComponent]
